@@ -1,0 +1,23 @@
+simRegion {
+reqJoiningPlatoon("Process-A","Process-B"); 
+reqJoiningPlatoon("Process-C","Process-D"); 
+}
+simRegion {
+ackJoinRequest("Process-B","Process-A"); 
+ackJoinRequest("Process-D","Process-C"); 
+}
+simRegion {
+flwrAckJoin("Process-A","Process-B"); 
+flwrAckJoin("Process-C","Process-D"); 
+}
+simRegion {
+leaderAddsFollower("Process-B","Process-A"); 
+leaderAddsFollower("Process-D","Process-C"); 
+}
+leaderReqMerge("Process-B","Process-C"); 
+coRegion {
+~ackJoinRequest("Process-C","Process-B"); 
+~ackMergeAct("Process-C","Process-B"); 
+~reqJoiningPlatoon("Process-C","Process-A"); 
+~reqJoiningPlatoon("Process-C","Process-B"); 
+}

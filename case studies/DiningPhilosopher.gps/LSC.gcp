@@ -1,0 +1,11 @@
+getHungry("Phil");
+coRegion {
+getRightFork("Phil","Fork"); 
+simRegion {
+getLeftFork("Phil","Fork"); 
+getHungry("Phil");
+}
+~releaseLeftFork("Phil","Fork"); 
+startEating("Phil");
+}
+releaseLeftFork("Phil","Fork"); 

@@ -1,0 +1,21 @@
+openPort("Customer","Travel agency");
+openPort("Travel agency","Travel agency");
+connect("Customer","Travel agency"); 
+callOperation("Customer","Travel agency","bookAHotelRoom"); 
+receiveCall("Travel agency");
+openPort("Travel agency","Hotel");
+openPort("Hotel","Hotel");
+connect("Travel agency","Hotel"); 
+callOperation("Travel agency","Hotel","bookARoom"); 
+receiveCall("Hotel");
+sendResponse("Hotel","Travel agency"); 
+if ( receiveResponse("Travel agency") ){
+sendResponse("Travel agency","Customer"); 
+finishRequestResponse("Travel agency");
+disconnect("Travel agency","Hotel"); 
+if ( receiveResponse("Customer") ){
+~finishRequestResponse("Customer");
+~disconnect("Customer","Travel agency"); 
+
+ }
+ }

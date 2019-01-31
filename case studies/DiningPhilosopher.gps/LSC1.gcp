@@ -1,0 +1,5 @@
+getHungry("Phil");
+coRegion {
+getLeftFork("Phil","Fork"); 
+getRightFork("Phil","Fork"); 
+}

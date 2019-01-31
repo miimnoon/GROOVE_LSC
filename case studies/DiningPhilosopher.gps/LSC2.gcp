@@ -1,0 +1,2 @@
+getHungry("Phil");
+getLeftFork("Phil" , "Fork");

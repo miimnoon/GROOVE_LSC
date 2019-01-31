@@ -1,0 +1,9 @@
+reqJoiningPlatoon("Process-A","Process-B"); 
+ackJoinRequest("Process-B","Process-A"); 
+flwrAckJoin("Process-A","Process-B"); 
+leaderAddsFollower("Process-B","Process-A"); 
+reqJoiningPlatoon("Process","Process-A"); 
+coRegion {
+~ackJoinRequest("Process-A","Process"); 
+~ackMergeAct("Process-A","Process"); 
+}

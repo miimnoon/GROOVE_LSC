@@ -1,0 +1,8 @@
+simRegion {
+getHungry("Phil");
+getHungry("Phil");
+}
+simRegion {
+getLeftFork("Phil","Fork"); 
+getLeftFork("Phil","Fork"); 
+}

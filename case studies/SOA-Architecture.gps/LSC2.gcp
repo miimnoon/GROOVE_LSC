@@ -1,0 +1,34 @@
+openPort("Customer","Travel agency");
+openPort("Travel agency","Travel agency");
+connect("Customer","Travel agency"); 
+callOperation("Customer","Travel agency","bookAFlight"); 
+receiveCall("Travel agency");
+openPort("Travel agency","AirLine");
+openPort("AirLine","AirLine");
+connect("Travel agency","AirLine"); 
+callOperation("Travel agency","AirLine","reserveATicket"); 
+receiveCall("AirLine");
+sendResponse("AirLine","Travel agency"); 
+if ( receiveResponse("Travel agency") ){
+sendResponse("Travel agency","Customer"); 
+if ( receiveResponse("Customer") ){
+callOperation("Customer","Travel agency","payTheTickets"); 
+receiveCall("Travel agency");
+openPort("Travel agency","Bank");
+openPort("Bank","Bank");
+connect("Travel agency","Bank"); 
+callOperation("Travel agency","Bank","pay"); 
+receiveCall("Bank");
+sendResponse("Bank","Travel agency"); 
+if ( receiveResponse("Travel agency") ){
+finishRequestResponse("Travel agency");
+disconnect("Travel agency","AirLine"); 
+finishRequestResponse("Travel agency");
+disconnect("Travel agency","Bank"); 
+finishRequestResponse("Customer");
+finishRequest("Customer");
+disconnect("Customer","Travel agency"); 
+
+ }
+ }
+ }

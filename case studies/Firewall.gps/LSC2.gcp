@@ -1,0 +1,2 @@
+safePckCreation("Threat_A");
+transfer("Threat_A","Inner Location"); 

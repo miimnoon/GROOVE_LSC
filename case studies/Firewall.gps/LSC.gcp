@@ -1,0 +1,5 @@
+unsafePckCreation("Threat-A");
+coRegion {
+~filter("Threat-A","Inner Location"); 
+~transfer("Threat-A","Inner Location"); 
+}
